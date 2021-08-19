@@ -4,10 +4,10 @@ import RichText from '../../components/RichText';
 import classes from './index.module.css';
 
 export type Type = {
-  blockType: 'content'
-  blockName?: string
-  content: unknown
-}
+  blockType: 'content';
+  blockName?: string;
+  content: unknown;
+};
 
 export const Content: Block = {
   slug: 'content',
@@ -20,6 +20,37 @@ export const Content: Block = {
       name: 'content',
       type: 'richText',
     },
+    {
+      name: 'columns',
+      type: 'array',
+      minRows: 1,
+      fields: [
+        {
+          name: 'width',
+          label: 'Width',
+          type: 'select',
+          defaultValue: 'full',
+          options: [
+            {
+              label: 'One Third',
+              value: 'oneThird',
+            },
+            {
+              label: 'Half',
+              value: 'half',
+            },
+            {
+              label: 'Tow Third',
+              value: 'towThird',
+            },
+            {
+              label: 'Full',
+              value: 'full',
+            },
+          ],
+        },
+      ],
+    },
   ],
 };
 
@@ -28,10 +59,7 @@ export const Component: React.FC<Type> = (props) => {
 
   return (
     <div className={classes.wrap}>
-      <RichText
-        content={content}
-        className={classes.content}
-      />
+      <RichText content={content} className={classes.content} />
     </div>
   );
 };

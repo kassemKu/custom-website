@@ -8,7 +8,7 @@
   ],
   "version": "0.0.1",
   "private": false,
-  "author": "TRBL",
+  "author": "Kassem",
   "scripts": {
     "build:next": "next build",
     "build:server": "tsc --project tsconfig.server.json",
@@ -34,13 +34,16 @@
     "@typescript-eslint/eslint-plugin": "4.0.1",
     "@typescript-eslint/parser": "4.0.1",
     "eslint": "^7.11.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.20.0",
     "eslint-plugin-jest": "^23.16.0",
     "eslint-plugin-jest-dom": "^3.0.1",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.18.0",
     "eslint-plugin-react-hooks": "^2.3.0",
+    "prettier": "^2.3.2",
     "ts-node": "^9.1.1"
   }
 }
