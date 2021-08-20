@@ -1,9 +1,10 @@
-import { CollectionConfig } from 'payload/types';
-import { MediaType } from './Media';
-import formatSlug from '../utilities/formatSlug';
-import { Image, Type as ImageType } from '../blocks/Image';
-import { CallToAction, Type as CallToActionType } from '../blocks/CallToAction';
-import { Content, Type as ContentType } from '../blocks/Content';
+import { CollectionConfig } from 'payload/types'
+import { MediaType } from './Media'
+import formatSlug from '../utilities/formatSlug'
+import { Image, Type as ImageType } from '../blocks/Image'
+import { CallToAction, Type as CallToActionType } from '../blocks/CallToAction'
+import { Content, Type as ContentType } from '../blocks/Content'
+import slug from '../fields/slug'
 
 export type Layout = CallToActionType | ContentType | ImageType
 
@@ -45,11 +46,7 @@ export const Page: CollectionConfig = {
       label: 'Page Layout',
       type: 'blocks',
       minRows: 1,
-      blocks: [
-        CallToAction,
-        Content,
-        Image,
-      ],
+      blocks: [CallToAction, Content, Image],
     },
     {
       name: 'meta',
@@ -73,20 +70,8 @@ export const Page: CollectionConfig = {
         },
       ],
     },
-    {
-      name: 'slug',
-      label: 'Page Slug',
-      type: 'text',
-      admin: {
-        position: 'sidebar',
-      },
-      hooks: {
-        beforeValidate: [
-          formatSlug('title'),
-        ],
-      },
-    },
+    slug,
   ],
-};
+}
 
-export default Page;
+export default Page
